@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app{
+    background-color: gray;
+    width: 100w;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .container{
+        width: 100%;
+
+        .navbar{
+            height: 20rem;
+            background-color: #FEC861;
+            display: flex;
+            justify-content: center;
+            .cwImage{
+                height: 5rem;
+                margin: 2rem;
+
+            }
+        }
+    }
+    .footer{
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid red;
+        width: 80%;
+        column-gap: 3rem;
+        border-radius: 1rem;
+        margin-top: 2rem;
+        .design{            
+            width: 4rem;
+        }
+        p{
+            color: blueviolet;
+            font-weight: 600;
+        }
+    }
+
+}
