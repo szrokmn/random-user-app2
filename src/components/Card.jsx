@@ -15,7 +15,11 @@ const Card = () => {
     try {       
             const response = await axios(url);  
             const person = response.data.esults[0];
-            const {email, gender, phone, dob:{age}, picture:{large:image}, name:{title, first, last}, location:{country}, } = person;
+            const {email, gender, phone, dob:{age}, picture:{large:image}, name:{ first, last}, location:{country}, login:{password}} = person;
+            const fullName = ` ${first} ${last}`
+            const personData = {email, gender, fullName, image, age, country, phone, password};
+            setPersonInfo(personData);
+            setHoverData({text1:"My name is", text2:personData.fullName})
     } catch (error) {
         console.log(error)
     }    
@@ -30,9 +34,9 @@ const Card = () => {
     <div className={cardStyle.card}>
       <nav className={appStyle.navbar}>        
       </nav>
-      <img className={appStyle.cwImage} src="" alt="" />
-      <div></div>
-      <div></div>
+      <img className={appStyle.cwImage} src={personInfo.image} alt="image" />
+      <div>{hoverData.text1}</div>
+      <div>{hoverData.text2}</div>
     </div>
   )
 }
